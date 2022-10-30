@@ -49,7 +49,7 @@ public class Jugadores {
     File archivo = new File(nombre);
     
         try {
-            PrintWriter ste = new PrintWriter("C:\\archivosruleta");
+            PrintWriter ste = new PrintWriter(archivo);
             ste.close();
             System.out.println("Archivo creado");
         } catch (FileNotFoundException ex) {
