@@ -13,7 +13,23 @@ public Revolver() {
     }
 
     boolean disparar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
+        boolean Fuego = true;
+
+        if (PosicionRecamaraActual == PosicionRealBala) {
+
+            Fuego = false;
+        }
+        return Fuego;
+    }
+
+    public void siguienteTiro() {
+
+        if (PosicionRecamaraActual == 6) {
+            PosicionRecamaraActual = 1;
+        } else {
+            PosicionRecamaraActual++;
+        }
     }
 
 }
