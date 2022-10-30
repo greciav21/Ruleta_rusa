@@ -1,5 +1,7 @@
 
 package ruleta_rusa;
+import java.io.*;
+
 
 public class Jugadores {
     int n_jugador;
@@ -11,7 +13,11 @@ public class Jugadores {
     this.nombre= " Jugador " + identifier;
     this.vivo= true;
     
+    
 }
+
+    Jugadores() {
+    }
   public void Disparar(Revolver d) {
  
         System.out.println(" El " + nombre + " está preparado para disparar ");
@@ -31,5 +37,23 @@ public class Jugadores {
 
     public void setVivo(boolean vivo) {
         this.vivo = vivo;
+        
+        
+    }
+
+    void vivo() {
+       
+    }
+    
+    public void creararchivoregist(String nombre){
+    File archivo = new File(nombre);
+    
+        try {
+            PrintWriter ste = new PrintWriter("C:\\archivosruleta");
+            ste.close();
+            System.out.println("Archivo creado");
+        } catch (FileNotFoundException ex) {
+          ex.printStackTrace(System.out);
+        }
     }
 }
