@@ -8,7 +8,7 @@ public class Ruleta_rusa {
         System.out.println(Nombre.isVivo());
           Nombre.creararchivoregist("ganadores.out");
           Nombre.creararchivoregist("perdedores.out");
-    }
-   
+    }  
+    
     
 }
