@@ -56,4 +56,29 @@ public class Jugadores {
           ex.printStackTrace(System.out);
         }
     }
+    
+     public String leerarchivo(String direccion){
+        
+        String txt = "";
+        
+        //Usamos aquí el try/catch para regular el manejo de errores dentro del método
+        try{
+            BufferedReader bf = new BufferedReader(new FileReader(direccion));
+            String temp = "";
+            String bfRead;
+            
+            //Este while se ejecutará siempre y cuando bfRead almacene un dato
+            while((bfRead =bf.readLine()) != null){
+                temp = temp + bfRead;
+            }
+            txt = temp;
+        
+        }catch(Exception e){
+            
+            System.err.println("Archivo no encontrado");
+            
+        }
+        
+        return txt;
+    }
 }
