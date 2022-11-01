@@ -1,67 +1,69 @@
-
 package ruleta_rusa;
+
+import java.util.Scanner;
+import java.io.*;
+import java .io.EOFException;
 
 public class Listajugadores_ {
        NodosL primer;
        NodosL ultimo; 
-public Listajugadores_(){
-    primer = null;
-    ultimo= null;
-}
-public void Ingresenodo (Jugadores dato){ //primero se apunta a si mismo
-    NodosL nuevo = new NodosL();
-    System.out.println("Ingrese dato de jugador nuevo");
-    nuevo.dato = dato;
-    if (primer == null){
-        primer = nuevo;
-        ultimo = primer;
-        primer.siguente = ultimo;
-    }else{
-        ultimo.siguente = nuevo;
-        nuevo.siguente = primer;
-        ultimo = nuevo;
+
+    public Listajugadores_() {
+        this.primer = null;
+        this.ultimo = null;
     }
-    System.out.println("Jugador ingresado exitosamente");
+    String [] datos;
+    public void add(String d1, String d2){
+        NodosL newnodo = new NodosL(d1, d2);
+    if (primer == null){
+        primer = newnodo;
+        ultimo = primer;
+        primer.sig = ultimo;
+    }else{
+        ultimo.sig = newnodo;
+        newnodo.sig= primer;
+        ultimo = newnodo;
+    }
 }
+    public void ingresando () throws IOException{
+        Scanner file = new Scanner (new File("participandes.txt"));
+        while(file.hasNextLine()){
+            String [] array;
+            array = file.nextLine().split(";");
+            this.add(array[0], array[1]);
+        }
+    }
 public void Desplegarnodo(){ //recorrer
-    NodosL Act = new NodosL();
-    Act = primer;
-    if(primer != null){
+    NodosL aux = primer;
+        if(primer != null){
         do{
-            System.out.println(Act.dato);
-            Act = Act.siguente;
-        }while(Act != primer);
+            System.out.println(aux.nombre + " " + aux.apellido);
+            aux = aux.sig;
+        }while(aux != primer);
             
     }else {
             System.out.println("Lista encontrada vacia");       
         }
 
     } 
-public void Eliminarnodo (Jugadores dato){ 
-    NodosL Act = new NodosL();
-   NodosL anterior = new NodosL();
-    Act = primer;
-    anterior = ultimo;
+public void Eliminarnodo (String nombre){ 
+    NodosL Act = primer;
+    NodosL anterior = ultimo;
     do{
-        if (Act.dato == dato ){
+        if (Act.nombre.equals(nombre) ){
         if (Act == primer){
-            primer = primer.siguente;
-            
-            ultimo.siguente = primer;   
+            primer = primer.sig;
+            ultimo.sig = primer;   
      } else if(Act == ultimo){
-         anterior.siguente= ultimo.siguente;
+         anterior.sig= ultimo.sig;
          ultimo = anterior;
      }else {
-         anterior.siguente = Act.siguente;
+         anterior.sig = Act.sig;
              }
-     }
-    
+     }   
         anterior = Act;
-        Act = Act.siguente;
+        Act = Act.sig;
    }while ( Act != primer);
   }
  }
 
- 
-
- 

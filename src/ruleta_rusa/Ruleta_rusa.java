@@ -1,24 +1,23 @@
  
-package ruleta_rusa; 
+package ruleta_rusa;
+import java.io.*;
 
 
 public class Ruleta_rusa {
-    public static void main(String[] args) {      
+    public static void main(String[] args) throws IOException{    
            //lista circular jugadores
-    Listajugadores_ listaJugadores = new Listajugadores_();
+    //Listajugadores_ listaJugadores = new Listajugadores_();
     //crear jugador
-    Jugadores Nombre = new Jugadores ();
+    //Jugador Nombre = new Jugador (1);
     //jugador en lista circular
-    listaJugadores.Ingresenodo(Nombre);
+    //listaJugadores.Ingresenodo(Nombre);
     //mostrar lista
-    listaJugadores.Desplegarnodo();
-         System.out.println(Nombre.isVivo());
-         Nombre.creararchivoregist( "ganadores.out");
-         Nombre.creararchivoregist( "perdedores.out");
-         
-    Jugadores a = new Jugadores();
-    
-    System.out.println(a.leerarchivo("ganadores.out"));
+    Listajugadores_ part = new Listajugadores_();
+    part.ingresando();
+    part.Desplegarnodo();
     } 
+    
+    //falta comenbzar a jugar
+    //funxion disparo
+    //func eliminar
 }
-
