@@ -5,16 +5,17 @@ import java.io.*;
 import java .io.EOFException;
 
 public class Listajugadores_ {
-       NodosL primer;
-       NodosL ultimo; 
+       NodosLj primer;
+       NodosLj ultimo; 
 
     public Listajugadores_() {
         this.primer = null;
         this.ultimo = null;
+
     }
     String [] datos;
     public void add(String d1, String d2){
-        NodosL newnodo = new NodosL(d1, d2);
+        NodosLj newnodo = new NodosLj(d1, d2);
     if (primer == null){
         primer = newnodo;
         ultimo = primer;
@@ -33,8 +34,9 @@ public class Listajugadores_ {
             this.add(array[0], array[1]);
         }
     }
+   
 public void Desplegarnodo(){ //recorrer
-    NodosL aux = primer;
+    NodosLj aux = primer;
         if(primer != null){
         do{
             System.out.println(aux.nombre + " " + aux.apellido);
@@ -47,8 +49,8 @@ public void Desplegarnodo(){ //recorrer
 
     } 
 public void Eliminarnodo (String nombre){ 
-    NodosL Act = primer;
-    NodosL anterior = ultimo;
+    NodosLj Act = primer;
+    NodosLj anterior = ultimo;
     do{
         if (Act.nombre.equals(nombre) ){
         if (Act == primer){

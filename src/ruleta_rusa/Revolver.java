@@ -2,32 +2,27 @@
 package ruleta_rusa;
 
 public class Revolver {
-    private int PosicionRecamaraActual;
-    private int PosicionRealBala;
+    public int PosicionRecamaraActual;
+    public int PosicionRealBala;
+    public boolean cargado;
 
 public Revolver() {
-       int PosicionRecamaraActual = (int) (Math.random()* 6 + 1);
-       int PosicionRealBala = (int) (Math.random()* 6 + 1);
+       this.PosicionRecamaraActual  = (int) (Math.random()* 5 + 1);
+       this.PosicionRealBala = (int) (Math.random()* 5 + 1);
+       this.cargado = true;
     }
 
-    boolean disparar() {
-
-        boolean Fuego = true;
-
+ public boolean disparar() {
         if (PosicionRecamaraActual == PosicionRealBala) {
-
-            Fuego = false;
-        }
-        return Fuego;
-    }
-
-    public void siguienteTiro() {
-
-        if (PosicionRecamaraActual == 6) {
-            PosicionRecamaraActual = 1;
-        } else {
+          this.cargado = false;
+          return true;
+        }  
             PosicionRecamaraActual++;
-        }
-    }
-
+        return false;
+      
+ }
+ 
 }
+
+
+
