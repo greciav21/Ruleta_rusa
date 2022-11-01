@@ -73,7 +73,7 @@ public class Jugadores {
             }
             txt = temp;
         
-        }catch(Exception e){
+        }catch(IOException e){
             
             System.err.println("Archivo no encontrado");
             

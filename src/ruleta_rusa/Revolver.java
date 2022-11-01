@@ -1,6 +1,4 @@
-/*
- Astrid commit 
- */
+
 package ruleta_rusa;
 
 public class Revolver {

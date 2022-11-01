@@ -1,14 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package ruleta_rusa;
 
-/**
- *
- * @author astrid
- */
 public class Listajugadores_ {
        NodosL primer;
        NodosL ultimo; 
@@ -54,6 +46,7 @@ public void Eliminarnodo (Jugadores dato){
         if (Act.dato == dato ){
         if (Act == primer){
             primer = primer.siguente;
+            
             ultimo.siguente = primer;   
      } else if(Act == ultimo){
          anterior.siguente= ultimo.siguente;
