@@ -3,15 +3,15 @@ package ruleta_rusa;
 import java.io.*;
 
 
+
 public class Jugadores {
-    int n_jugador;
-    String nombre;
+    String n_jugador;
+    String nombre, apellido;
     int n_rondas;
     boolean vivo;
 
- public Jugadores (int identifier) {
-    this.n_jugador= identifier;
-    this.nombre= " Jugador " + identifier;
+ public void Jugadores () {
+    this.n_jugador = nombre + apellido;
     this.vivo= true; 
     this.n_rondas = 0;          
 }
@@ -28,19 +28,26 @@ public class Jugadores {
         }
 
   }
+    public void Restaurararchivo () throws IOException{
+        try ( FileWriter filew = new FileWriter ("Perdedores.txt");
+            BufferedWriter BufW = new  BufferedWriter(filew);
+            PrintWriter x = new PrintWriter (BufW))
+       {
+           x.println();
     
-    public void creararchivoregist(String nombre){
-    File archivo = new File(nombre);
+    } catch (IOException e){
+            }
+        
+        try ( FileWriter filew = new FileWriter ("Ganador.txt");
+            BufferedWriter BufW = new  BufferedWriter(filew);
+            PrintWriter x = new PrintWriter (BufW))
+       {
+           x.println();
     
-        try {
-            PrintWriter ste = new PrintWriter("ganadores.out");
-            ste.close();
-            System.out.println("Archivo creado");
-        } catch (FileNotFoundException ex) {
-          ex.printStackTrace(System.out);
-        }
+    } catch (IOException e){
+            }     
     }
-    
+               
      public String leerarchivo(String direccion){
         
         String txt = "";
