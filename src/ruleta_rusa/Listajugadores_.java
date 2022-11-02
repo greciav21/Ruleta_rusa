@@ -8,7 +8,8 @@ public class Listajugadores_ {
        NodosLj primer;
        NodosLj ultimo; 
 
-    public Listajugadores_() {
+       //
+       public Listajugadores_() { 
         this.primer = null;
         this.ultimo = null;
 
@@ -26,6 +27,8 @@ public class Listajugadores_ {
         ultimo = newnodo;
     }
 }
+    
+    //Para agregar el archivo que contiene los jugadores
     public void ingresando () throws IOException{
         Scanner file = new Scanner (new File("participandes.txt"));
         while(file.hasNextLine()){
@@ -34,8 +37,30 @@ public class Listajugadores_ {
             this.add(array[0], array[1]);
         }
     }
-   
-public void Desplegarnodo(){ //recorrer
+    
+    //Para resetear el archivo de ganador y perdedores entre partidas
+    public void Restaurararchivo () throws IOException{
+        try ( FileWriter filew = new FileWriter ("Perdedores.txt");
+            BufferedWriter BufW = new  BufferedWriter(filew);
+            PrintWriter x = new PrintWriter (BufW))
+       {
+           x.println();
+    
+    } catch (IOException e){
+            }
+        
+        try ( FileWriter filew = new FileWriter ("Ganador.txt");
+            BufferedWriter BufW = new  BufferedWriter(filew);
+            PrintWriter x = new PrintWriter (BufW))
+       {
+           x.println();
+    
+    } catch (IOException e){
+            }     
+    }
+    
+    //Para mostrar la lista
+    public void Desplegarnodo(){ 
     NodosLj aux = primer;
         if(primer != null){
         do{
@@ -48,7 +73,10 @@ public void Desplegarnodo(){ //recorrer
         }
 
     } 
-public void Eliminarnodo (String nombre){ 
+
+
+   //Para eliminar un jugador de la lista, una vez sale del juego
+    public void Eliminarnodo (String nombre){ 
     NodosLj Act = primer;
     NodosLj anterior = ultimo;
     do{
@@ -67,5 +95,6 @@ public void Eliminarnodo (String nombre){
         Act = Act.sig;
    }while ( Act != primer);
   }
+
  }
 
