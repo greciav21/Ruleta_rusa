@@ -52,6 +52,49 @@ public class Listajugadores_ {
             }     
     }
     
-   
- }
+    //Para que se puedan ir guardando los distintos archivos de texto de la ruleta
+    public static void main(String[] args) {
+           File x = new File("Participandes.txt");
+           BufferedReader reader = null;
+              try {
+                  reader = new BufferedReader(new FileReader(x));
+                  String linea = reader.readLine();
+                  String datos="";
+                  while(linea!=null){
+                       datos+=linea;
+                       reader.readLine();
+                  }
+              } 
+              catch(IOException ex){
+                  ex.printStackTrace();
+                }
+           File y = new File("Perdedores.txt");
+              try {
+                  reader = new BufferedReader(new FileReader(y));
+                  String linea = reader.readLine();
+                  String datos="";
+                  while(linea!=null){
+                       datos+=linea;
+                       reader.readLine();
+                  }
+              } 
+              catch(IOException ex){
+                  ex.printStackTrace();
+                }
+           File z = new File("Ganador.txt");
+              try {
+                  reader = new BufferedReader(new FileReader(z));
+                  String linea = reader.readLine();
+                  String datos="";
+                  while(linea!=null){
+                       datos+=linea;
+                       reader.readLine();
+                  }
+              } 
+              catch(IOException ex){
+                  ex.printStackTrace();
+                }              
+              }
+    
+   }
 
