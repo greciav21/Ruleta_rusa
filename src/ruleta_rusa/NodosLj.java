@@ -11,9 +11,12 @@ public class NodosLj {
         this.nombre =d1;
         this.apellido = d2;
         this.sig=null;
-        Revolver fuego = new Revolver();
-        this.Revolver = fuego.disparar();
     }   
+    boolean disparar (){
+        Revolver fuego = new Revolver();
+        return fuego.disparar();
+        
+    }
     
     
 

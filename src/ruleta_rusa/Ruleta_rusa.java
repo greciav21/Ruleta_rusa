@@ -13,6 +13,7 @@ public class Ruleta_rusa {
     //listaJugadores.Ingresenodo(Nombre);
     //mostrar lista
     Listajugadores_ part = new Listajugadores_();
+    part.EnciendoBombillo();
     part.ingresando();
     part.Desplegarnodo();
     } 

@@ -71,9 +71,22 @@ public class Listajugadores_ {
     }else {
             System.out.println("Lista encontrada vacia");       
         }
-
     } 
-
+    
+      public void EnciendoBombillo (){ //para empezar el juego
+    NodosLj aux = primer;
+        if (primer != null){
+        do {
+            aux.disparar();
+            if(aux.Revolver){     
+            }
+            System.out.println(aux.nombre + " " + aux.apellido);
+            aux = aux.sig;
+          }while (aux != primer);
+       }else {
+            System.out.println("Lista encontrada vacia");
+        }
+      }
 
    //Para eliminar un jugador de la lista, una vez sale del juego
     public void Eliminarnodo (String nombre){ 
