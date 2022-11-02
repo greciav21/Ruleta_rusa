@@ -13,25 +13,24 @@ public Revolver() {
     }
 
  public boolean disparar() {
-        if (cargado){
-            if (PosicionRecamaraActual == PosicionRealBala) {
-                this.cargado = false;
-                return true;
-            }
-            if (this.PosicionRecamaraActual == 6){
-                PosicionRecamaraActual = 0;
+     if (cargado) {
+        if (PosicionRecamaraActual == PosicionRealBala) {
+            this.cargado = false;
+            return true;
+        }  
+        if(this.PosicionRecamaraActual == 6){
+            PosicionRecamaraActual = 0;
             }else{
                 this.PosicionRecamaraActual++;
-            }
-            return false;  
-        }else{
-            return false;
-        }  
-    }    
-}       
-     
+        }
+        return false;   
+     }else{
+         return false;
+     }
+       
+ }
  
-
+}
 
 
 

@@ -6,25 +6,18 @@ import java .io.EOFException;
 
 public class Listajugadores_ {
        NodosLj primer;
-       NodosLj ultimo; 
-
-       //
-       public Listajugadores_() { 
+       
+    public Listajugadores_() { 
         this.primer = null;
-        this.ultimo = null;
-
     }
-    String [] datos;
-    public void add(String d1, String d2){
-        NodosLj newnodo = new NodosLj(d1, d2);
+    
+    public void add(String nombre, String apellido){
+        NodosLj newnodo = new NodosLj(nombre, apellido);
     if (primer == null){
         primer = newnodo;
-        ultimo = primer;
-        primer.sig = ultimo;
+        primer.sig = primer;
     }else{
-        ultimo.sig = newnodo;
-        newnodo.sig= primer;
-        ultimo = newnodo;
+        
     }
 }
     
@@ -59,55 +52,6 @@ public class Listajugadores_ {
             }     
     }
     
-    //Para mostrar la lista
-    public void Desplegarnodo(){ 
-    NodosLj aux = primer;
-        if(primer != null){
-        do{
-            System.out.println(aux.nombre + " " + aux.apellido);
-            aux = aux.sig;
-        }while(aux != primer);
-            
-    }else {
-            System.out.println("Lista encontrada vacia");       
-        }
-    } 
-    
-      public void EnciendoBombillo (){ //para empezar el juego
-    NodosLj aux = primer;
-        if (primer != null){
-        do {
-            aux.disparar();
-            if(aux.Revolver){     
-            }
-            System.out.println(aux.nombre + " " + aux.apellido);
-            aux = aux.sig;
-          }while (aux != primer);
-       }else {
-            System.out.println("Lista encontrada vacia");
-        }
-      }
-
-   //Para eliminar un jugador de la lista, una vez sale del juego
-    public void Eliminarnodo (String nombre){ 
-    NodosLj Act = primer;
-    NodosLj anterior = ultimo;
-    do{
-        if (Act.nombre.equals(nombre) ){
-        if (Act == primer){
-            primer = primer.sig;
-            ultimo.sig = primer;   
-     } else if(Act == ultimo){
-         anterior.sig= ultimo.sig;
-         ultimo = anterior;
-     }else {
-         anterior.sig = Act.sig;
-             }
-     }   
-        anterior = Act;
-        Act = Act.sig;
-   }while ( Act != primer);
-  }
-
+   
  }
 

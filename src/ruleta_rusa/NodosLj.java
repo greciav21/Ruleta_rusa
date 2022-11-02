@@ -2,16 +2,19 @@
 package ruleta_rusa;
 
 public class NodosLj {
-    Jugador jug;
+    Jugador player;
     NodosLj sig;
 
-    public NodosLj(Jugador jug, NodosLj sig) {
-        this.jug = jug;
+    public NodosLj(Jugador player, NodosLj sig) {
+        this.player = player;
         this.sig = sig;
     }
+
+    public NodosLj(String nom, String ape){
+        this.player = new Jugador(nom, ape);
+        this.sig = null;
+    }
+    
    
     
-    
-    
-
 }
