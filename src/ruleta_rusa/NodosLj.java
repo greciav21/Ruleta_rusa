@@ -2,21 +2,15 @@
 package ruleta_rusa;
 
 public class NodosLj {
-    String nombre, apellido;
+    Jugador jug;
     NodosLj sig;
-    Boolean Revolver;
 
-
-    NodosLj (String d1,String d2) {
-        this.nombre =d1;
-        this.apellido = d2;
-        this.sig=null;
-    }   
-    boolean disparar (){
-        Revolver fuego = new Revolver();
-        return fuego.disparar();
-        
+    public NodosLj(Jugador jug, NodosLj sig) {
+        this.jug = jug;
+        this.sig = sig;
     }
+   
+    
     
     
 

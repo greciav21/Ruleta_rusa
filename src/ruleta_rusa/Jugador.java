@@ -5,33 +5,31 @@ import java.io.*;
 
 
 public class Jugador {
-    String n_jugador;
     String nombre, apellido;
-    int n_rondas;
+    int rondas;
+    Revolver revolver;
     boolean vivo;
+    
 
- public void Jugador () {
-    this.n_jugador = nombre + apellido;
-    this.vivo= true; 
-    this.n_rondas = 0;          
-}
-
- //Se crean los métodos de la clase basándonos en qué acciones puede realizar el jugador en el programa
- 
- 
- public void Disparar(Revolver d) {
- 
-        System.out.println(" El " + nombre + " está preparado para disparar ");
-        
-        if (d.disparar()) {
-            this.vivo = false;
-            System.out.println(" El " + nombre + " muere y sale del juego ");
-        } else {
-            System.out.println(" El " + nombre + " sigue en pie y en el juego ");
+    public Jugador(String nombre, String apellido) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.rondas = 0;
+        this.revolver = new Revolver();
+        this.vivo = true;
+    }
+    
+     //Se crean los métodos de la clase basándonos en qué acciones puede realizar el jugador en el programa
+ public void Disparar(Jugador enfrente) { 
+        if (revolver.disparar()) {
+            enfrente.Morir();
+            System.out.println(this.nombre + " " + this.apellido + " ha disparado al jugador " + enfrente.nombre + " " + enfrente.apellido );
+        } else{
+            System.out.println( nombre +" " +apellido + " no cargado ");
         }
 
   }
- 
+                
  public void Morir() {
           this.vivo = false;
         }  
