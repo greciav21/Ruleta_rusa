@@ -5,24 +5,39 @@ import java.io.*;
 import java .io.EOFException;
 
 public class Listajugadores_ {
-       NodosLj primer;
+       NodosLj L;
        
     public Listajugadores_() { 
-        this.primer = null;
+        this.L = null;
     }
-    
-    public void add(String nombre, String apellido){
+    public void aggNodo(String nombre, String apellido){
         NodosLj newnodo = new NodosLj(nombre, apellido);
-    if (primer == null){
-        primer = newnodo;
-        primer.sig = primer;
+    if (L == null){
+        L = newnodo;
+        L.sig = L;
     }else{
-        
+        NodosLj aux = L;
+        while(aux.sig != L)
+            aux = aux.sig;
+        aux.sig = newnodo;
+        newnodo.sig = L;  
     }
 }
     
+    public void mostrarList(){
+        NodosLj aux = L;
+        if (L != null){
+            while (aux != L){
+                System.out.println(aux.jug.nombre);
+                aux = aux.sig;
+            }
+        }else{
+            System.out.println(" La lista está vacía ");
+        }
+    }
+  
     //Para agregar el archivo que contiene los jugadores
-    public void ingresando () throws IOException{
+    public void ingresandoPart () throws IOException{
         Scanner file = new Scanner (new File("participandes.txt"));
         while(file.hasNextLine()){
             String [] array;
@@ -53,7 +68,7 @@ public class Listajugadores_ {
     }
     
     //Para que se puedan ir guardando los distintos archivos de texto de la ruleta
-    public static void main(String[] args) {
+           public void guardarArchivos() {
            File x = new File("Participandes.txt");
            BufferedReader reader = null;
               try {
@@ -66,7 +81,6 @@ public class Listajugadores_ {
                   }
               } 
               catch(IOException ex){
-                  ex.printStackTrace();
                 }
            File y = new File("Perdedores.txt");
               try {
@@ -79,7 +93,6 @@ public class Listajugadores_ {
                   }
               } 
               catch(IOException ex){
-                  ex.printStackTrace();
                 }
            File z = new File("Ganador.txt");
               try {
@@ -92,9 +105,12 @@ public class Listajugadores_ {
                   }
               } 
               catch(IOException ex){
-                  ex.printStackTrace();
                 }              
               } 
+
+    private void add(String string, String string0) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
    }
 
