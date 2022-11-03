@@ -42,7 +42,7 @@ public class Listajugadores_ {
         while(file.hasNextLine()){
             String [] array;
             array = file.nextLine().split(";");
-            this.add(array[0], array[1]);
+            this.aggNodo(array[0], array[1]);
         }
     }
     
@@ -108,9 +108,6 @@ public class Listajugadores_ {
                 }              
               } 
 
-    private void add(String string, String string0) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
+       
    }
 
